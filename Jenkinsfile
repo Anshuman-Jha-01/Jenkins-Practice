@@ -3,7 +3,11 @@ pipeline {
         node {
             label 'docker-agent'
             }
+    }    
+    triggers {
+        pollSCM '*/1 * * * *'
     }
+
     stages {
         stage('Build') {
             steps {
